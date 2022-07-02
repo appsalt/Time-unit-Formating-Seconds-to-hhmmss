@@ -42,39 +42,33 @@ private:
 
 int main()
 {
-    srand(time(NULL));
-    const int day_s{ 60 * 60 * 24 };
+    // We seed the random and create a variable that is the total amount of seconds in a day
+        srand(time(NULL));
+        const int day_s{ 60 * 60 * 24 };
     
-    int T_s{ rand()*rand() };
-    T_s = T_s % day_s;
-    //int T_s{ day_s -2 };
+    // We create an integer with a random number of seconds below the total amount of seconds in a day
+        int T_s{ rand()*rand() };
+        T_s = T_s % day_s;
 
-    TFs_hhmmss_arr3 a(T_s);
-    int* hhmmss = a.outPutt();
+    // An object initalizes with the amount of seconds and stores number of hour minutes and seconds that represent
+        TFs_hhmmss_arr3 a(T_s);
 
-    std::cout << std::endl;
-    std::cout << "seconds: ";
-    std::cout << T_s;
-    std::cout << std::endl;
-    std::cout << hhmmss[0];
-    std::cout << "h ";
-    std::cout << hhmmss[1];
-    std::cout << "m ";
-    std::cout << hhmmss[2];
-    std::cout << "s ";
-    std::cout << std::endl;
+    // The object has a function that return a pointer to and array[3] with {hours,minutes,secons}
+        int* hhmmss = a.outPutt();
+
+    // We end by formating the result
+        std::cout << std::endl;
+        std::cout << "seconds: ";
+        std::cout << T_s;
+        std::cout << std::endl;
+        std::cout << hhmmss[0];
+        std::cout << "h ";
+        std::cout << hhmmss[1];
+        std::cout << "m ";
+        std::cout << hhmmss[2];
+        std::cout << "s ";
+        std::cout << std::endl;
 
 
     return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
